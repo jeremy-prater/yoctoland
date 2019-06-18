@@ -1,0 +1,15 @@
+[submodule "poky"]
+	path = poky
+	url = git://git.yoctoproject.org/poky.git
+[submodule "meta-openembedded"]
+	path = meta-openembedded
+	url = git://git.openembedded.org/meta-openembedded
+[submodule "meta-qt5"]
+	path = meta-qt5
+	url = https://github.com/meta-qt5/meta-qt5.git
+[submodule "meta-security"]
+	path = meta-security
+	url = git://git.yoctoproject.org/meta-security.git
+[submodule "meta-wandboard"]
+	path = meta-wandboard
+	url = git://github.com/jumpnow/meta-wandboard

@@ -13,3 +13,6 @@
 [submodule "meta-wandboard"]
 	path = meta-wandboard
 	url = git://github.com/jumpnow/meta-wandboard
+[submodule "meta-swupdate"]
+	path = meta-swupdate
+	url = https://github.com/sbabic/meta-swupdate.git

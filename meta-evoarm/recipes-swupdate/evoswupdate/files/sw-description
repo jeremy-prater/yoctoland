@@ -1,0 +1,2 @@
+#sha256 = "@artifact-file-name"
+version = "@@DISTRO_VERSION@@";

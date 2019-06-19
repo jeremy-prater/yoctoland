@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIRS="meta-openembedded meta-wandboard meta-qt5 meta-security poky"
+DIRS="meta-openembedded meta-wandboard meta-qt5 meta-security poky meta-swupdate"
 
 for dir in $DIRS; do
     echo " ==> Updating  $dir"

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ROOTDIR=$(realpath `git rev-parse --show-cdup`)
+
+cd $ROOTDIR
+
+git submodule init
+git submodule update
+
+source $ROOTDIR/poky/oe-init-build-env $ROOTDIR/build

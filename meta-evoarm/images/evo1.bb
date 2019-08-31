@@ -12,6 +12,7 @@ CORE_OS = " \
     tzdata \
     u-boot-scr \
     swupdate \
+    linux-firmware \
 "
 
 KERNEL_EXTRA_INSTALL = " \
@@ -32,6 +33,15 @@ WIFI_SUPPORT = " \
     rfkill \
     wpa-supplicant \
 "
+
+BLUETOOTH_SUPPORT = " \
+    bluez5 \
+"
+
+AUDIO_SUPPORT = " \
+    pulseaudio \
+"
+
 
 DEV_SDK_INSTALL = " \
     binutils \
@@ -102,6 +112,8 @@ IMAGE_INSTALL += " \
     ${EXTRA_TOOLS_INSTALL} \
     ${KERNEL_EXTRA_INSTALL} \
     ${WIFI_SUPPORT} \
+    ${BLUETOOTH_SUPPORT} \
+    ${AUDIO_SUPPORT} \
     ${WIREGUARD} \
 "
 

@@ -1,6 +1,9 @@
 #!/bin/bash
 
-ROOTDIR=$(realpath `git rev-parse --show-cdup`)
+RELROOT="./`git rev-parse --show-cdup`"
+ROOTDIR="$(realpath $RELROOT)"
+
+echo " ==> Using root : $ROOTDIR <=="
 
 cd $ROOTDIR
 

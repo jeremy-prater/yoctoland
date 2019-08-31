@@ -8,6 +8,7 @@ LICENSE = "CLOSED"
 # You can extend with scripts or wahtever you need
 SRC_URI = " \
     file://sw-description \
+    file://update.sh \
     "
 
 # images to build before building swupdate image

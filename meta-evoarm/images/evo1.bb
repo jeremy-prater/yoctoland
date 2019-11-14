@@ -1,9 +1,11 @@
-SUMMARY = "A console development image with some C/C++ dev tools"
+SUMMARY = "The EVO ARM image"
 
 IMAGE_FEATURES += "package-management"
 IMAGE_LINGUAS = "en-us"
 
 inherit image
+
+IMAGE_FSTYPES = "ext4.gz"
 
 CORE_OS = " \
     openssh openssh-keygen openssh-sftp-server \
@@ -12,7 +14,10 @@ CORE_OS = " \
     tzdata \
     u-boot-scr \
     swupdate \
+    swupdate-www \
+    swupdate-tools \
     linux-firmware \
+    evoarm-bsp \
 "
 
 KERNEL_EXTRA_INSTALL = " \

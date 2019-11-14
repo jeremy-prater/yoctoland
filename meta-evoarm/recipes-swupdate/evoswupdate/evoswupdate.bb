@@ -1,4 +1,4 @@
-DESCRIPTION = "Example recipe generating SWU image"
+DESCRIPTION = "EVO ARM SWUpdate image"
 SECTION = ""
 
 LICENSE = "CLOSED"
@@ -17,7 +17,7 @@ IMAGE_DEPENDS = "evo1 virtual/kernel"
 # images and files that will be included in the .swu image
 SWUPDATE_IMAGES = "evo1"
 
-SWUPDATE_IMAGES_FSTYPES[evo1] = ".tar.xz"
+SWUPDATE_IMAGES_FSTYPES[evo1] = ".ext4.gz"
 
 # a deployable image can have multiple format, choose one
 #SWUPDATE_IMAGES_FSTYPES[core-image-full-cmdline] = ".ubifs"

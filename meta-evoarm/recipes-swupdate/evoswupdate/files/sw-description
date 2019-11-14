@@ -1,26 +1,28 @@
 software =
 {
-    version = "1.0.1";
-
-    evo1 = {
-
-        hardware-compatibility: [ "REV4" ];
-
+    version = "1";
+    hardware-compatibility =
+    [
+        "1"
+    ];
+    evo1-wandboard =
+    {
         images: (
             {
-                filename = "evo1-wandboard.tar.xz";
+                filename = "evo1-wandboard.ext4.gz";
                 device = "/dev/update";
                 type = "raw";
-                sha256 = "@evo1-wandboard.tar.xz";
+                sha256 = "@evo1-wandboard.ext4.gz";
                 compressed = true;
             }
         );
-    
-        scripts: (
-            {
-                filename = "update.sh";
-                type = "shellscript";
-                sha256 = "cfd220e7e0621a5497e2508c842f50129804877da03cfa764ea5d3ce048ade72";
-             }
-        );
+
     };
+    scripts: (
+        {
+            filename = "update.sh";
+            type = "shellscript";
+            sha256 = "cfd220e7e0621a5497e2508c842f50129804877da03cfa764ea5d3ce048ade72"
+        }
+    );
+};

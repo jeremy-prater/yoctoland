@@ -109,6 +109,7 @@ EXTRA_TOOLS_INSTALL = " \
     unzip \
     wget \
     zip \
+    vim \
 "
 
 IMAGE_INSTALL += " \

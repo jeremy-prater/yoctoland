@@ -45,4 +45,6 @@ if [ $1 == "postinst" ]; then
     get_update_part
     echo Update U-Boot variable: bootpart=$UPDATE_PART
     fw_setenv bootpart $UPDATE_PART
+    sync
+    reboot
 fi

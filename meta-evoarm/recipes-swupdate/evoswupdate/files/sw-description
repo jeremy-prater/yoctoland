@@ -22,7 +22,7 @@ software =
         {
             filename = "update.sh";
             type = "shellscript";
-            sha256 = "cfd220e7e0621a5497e2508c842f50129804877da03cfa764ea5d3ce048ade72"
+            sha256 = "9483443520701b791089bf2e653937384288665483ec932b65d6a2cd25ba3a18"
         }
     );
 };

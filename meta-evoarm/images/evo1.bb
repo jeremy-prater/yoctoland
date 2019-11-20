@@ -18,6 +18,7 @@ CORE_OS = " \
     swupdate-tools \
     linux-firmware \
     evoarm-bsp \
+    evoarm-network-config \
 "
 
 KERNEL_EXTRA_INSTALL = " \

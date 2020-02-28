@@ -19,6 +19,8 @@ CORE_OS = " \
     linux-firmware \
     evoarm-bsp \
     evoarm-network-config \
+    udev-rules \
+    udev-automount \
 "
 
 KERNEL_EXTRA_INSTALL = " \
@@ -38,10 +40,15 @@ WIFI_SUPPORT = " \
     iw \
     rfkill \
     wpa-supplicant \
+    connman \
+    connman-client \
 "
 
 BLUETOOTH_SUPPORT = " \
     bluez5 \
+    bluez5-obex \
+    bluez5-noinst-tools \
+    firmware-brcm43xx \
 "
 
 AUDIO_SUPPORT = " \

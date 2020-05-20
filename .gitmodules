@@ -16,3 +16,6 @@
 [submodule "meta-swupdate"]
 	path = meta-swupdate
 	url = https://github.com/sbabic/meta-swupdate.git
+[submodule "meta-jumpnow"]
+	path = meta-jumpnow
+	url = https://github.com/jumpnow/meta-jumpnow.git

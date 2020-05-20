@@ -80,7 +80,6 @@ DEV_SDK_INSTALL = " \
     make \
     perl-modules \
     pkgconfig \
-    python-modules \
     python3-modules \
     strace \
 "

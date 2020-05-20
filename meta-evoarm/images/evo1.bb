@@ -27,12 +27,6 @@ KERNEL_EXTRA_INSTALL = " \
     kernel-modules \
 "
 
-WIREGUARD = " \
-    wireguard-init \
-    wireguard-module \
-    wireguard-tools \
-"
-
 WIFI_SUPPORT = " \
     bcm4329-nvram-config \
     bcm4330-nvram-config \
@@ -127,7 +121,6 @@ IMAGE_INSTALL += " \
     ${WIFI_SUPPORT} \
     ${BLUETOOTH_SUPPORT} \
     ${AUDIO_SUPPORT} \
-    ${WIREGUARD} \
 "
 
 IMAGE_FILE_BLACKLIST += " \

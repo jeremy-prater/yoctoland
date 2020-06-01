@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIRS="meta-openembedded meta-wandboard meta-qt5 meta-security poky meta-swupdate meta-jumpnow"
+DIRS="meta-openembedded meta-wandboard meta-rpi64 meta-qt5 meta-security poky meta-swupdate meta-jumpnow"
 
 for dir in $DIRS; do
     echo " ==> Updating  $dir"
@@ -12,7 +12,7 @@ done
 
 APPDIRS="meta-evoarm"
 
-for dir in $DIRS; do
+for dir in $APPDIRS; do
     echo " ==> Updating  $dir"
     pushd $dir
     git checkout master

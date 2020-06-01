@@ -19,3 +19,6 @@
 [submodule "meta-jumpnow"]
 	path = meta-jumpnow
 	url = https://github.com/jumpnow/meta-jumpnow.git
+[submodule "meta-evoarm"]
+	path = meta-evoarm
+	url = git@github.com:jeremy-prater/meta-evoarm.git

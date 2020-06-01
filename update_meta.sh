@@ -9,3 +9,13 @@ for dir in $DIRS; do
     git pull
     popd
 done
+
+APPDIRS="meta-evoarm"
+
+for dir in $DIRS; do
+    echo " ==> Updating  $dir"
+    pushd $dir
+    git checkout master
+    git pull
+    popd
+done

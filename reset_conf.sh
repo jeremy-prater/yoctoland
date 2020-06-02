@@ -1,7 +1,16 @@
 #!/bin/bash
 
-ROOTDIR=$(realpath `git rev-parse --show-cdup`)
-mkdir -p $ROOTDIR/build/conf
+if [ -z "$BUILD_DIR" ]
+then
+    echo "No BUILD_DIR specified!"
+    echo "Go Home!!!!"
+    echo "source ./env_init <build_dir>"
+    return 1
+fi
 
-cp -v $ROOTDIR/meta-evoarm/conf/local.conf $ROOTDIR/build/conf/local.conf
-cp -v $ROOTDIR/meta-evoarm/conf/bblayers.conf $ROOTDIR/build/conf/bblayers.conf
+
+ROOTDIR=$(realpath `git rev-parse --show-cdup`)
+mkdir -p $ROOTDIR/$BUILD_DIR/conf
+
+cp -v $ROOTDIR/conf/local.conf $ROOTDIR/$BUILD_DIR/conf/local.conf
+cp -v $ROOTDIR/conf/bblayers.conf $ROOTDIR/$BUILD_DIR/conf/bblayers.conf

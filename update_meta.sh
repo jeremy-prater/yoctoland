@@ -1,6 +1,10 @@
 #!/bin/bash
 
-DIRS="meta-openembedded meta-wandboard meta-rpi64 meta-qt5 meta-security poky meta-swupdate meta-jumpnow"
+ROOTDIR=$(realpath `git rev-parse --show-cdup`)
+
+cd $ROOTDIR
+
+DIRS="meta-openembedded meta-wandboard meta-rpi64 meta-qt5 meta-security poky meta-raspberrypi meta-swupdate meta-jumpnow"
 
 for dir in $DIRS; do
     echo " ==> Updating  $dir"

@@ -22,10 +22,6 @@
 [submodule "meta-evoarm"]
 	path = meta-evoarm
 	url = git@github.com:jeremy-prater/meta-evoarm.git
-[submodule "meta-rpi64"]
-	path = meta-rpi64
-	url = git@github.com:jumpnow/meta-rpi64.git
-	branch = dunfell
 [submodule "meta-raspberrypi"]
 	path = meta-raspberrypi
 	url = git://git.yoctoproject.org/meta-raspberrypi

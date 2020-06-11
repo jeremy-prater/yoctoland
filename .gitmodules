@@ -26,3 +26,6 @@
 	path = meta-raspberrypi
 	url = git://git.yoctoproject.org/meta-raspberrypi
 	branch = dunfell
+[submodule "meta-darksky"]
+	path = meta-darksky
+	url = git@github.com:jeremy-prater/meta-darksky.git

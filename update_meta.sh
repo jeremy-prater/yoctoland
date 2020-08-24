@@ -4,7 +4,18 @@ ROOTDIR=$(realpath `git rev-parse --show-cdup`)
 
 cd $ROOTDIR
 
-DIRS="meta-openembedded meta-wandboard meta-rpi64 meta-qt5 meta-security poky meta-raspberrypi meta-swupdate meta-jumpnow"
+DIRS=" \
+    meta-cloud-services \
+    meta-jumpnow \
+    meta-openembedded \
+    meta-qt5 \
+    meta-raspberrypi \
+    meta-security \
+    meta-swupdate \
+    meta-virtualization \
+    meta-wandboard \
+    poky \
+"
 
 for dir in $DIRS; do
     echo " ==> Updating  $dir"
@@ -14,12 +25,15 @@ for dir in $DIRS; do
     popd
 done
 
-APPDIRS="meta-evoarm"
+APPDIRS="
+    meta-evoarm \
+    meta-darksky \
+"
 
 for dir in $APPDIRS; do
     echo " ==> Updating  $dir"
     pushd $dir
-    git checkout master
+    git checkout trunk
     git pull
     popd
 done

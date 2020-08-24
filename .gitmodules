@@ -29,3 +29,9 @@
 [submodule "meta-darksky"]
 	path = meta-darksky
 	url = git@github.com:jeremy-prater/meta-darksky.git
+[submodule "meta-cloud-services"]
+	path = meta-cloud-services
+	url = git://git.yoctoproject.org/meta-cloud-services
+[submodule "meta-virtualization"]
+	path = meta-virtualization
+	url = git://git.yoctoproject.org/meta-virtualization

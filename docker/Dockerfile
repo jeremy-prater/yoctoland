@@ -25,6 +25,8 @@ RUN apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib go
     build-essential chrpath libsdl1.2-dev xterm autoconf automake libtool libglib2.0-dev git-annex \
     flex byacc
 
+# RUN apt-get install -y python3-venv python3-pip
+
 #Get the add-apt-repository command
 # RUN apt-get install -y software-properties-common
 

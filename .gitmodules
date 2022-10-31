@@ -23,9 +23,6 @@
 [submodule "meta-cloud-services"]
 	path = meta-cloud-services
 	url = git://git.yoctoproject.org/meta-cloud-services
-[submodule "meta-virtualization"]
-	path = meta-virtualization
-	url = git://git.yoctoproject.org/meta-virtualization
 [submodule "meta-electron"]
 	path = meta-electron
 	url = git@github.com:vulcanoio/meta-electron.git

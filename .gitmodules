@@ -12,26 +12,29 @@
 	url = git://git.yoctoproject.org/meta-security.git
 [submodule "meta-wandboard"]
 	path = meta-wandboard
-	url = git://github.com/jumpnow/meta-wandboard
+	url = https://github.com/jumpnow/meta-wandboard.git
 [submodule "meta-swupdate"]
 	path = meta-swupdate
 	url = https://github.com/sbabic/meta-swupdate.git
 [submodule "meta-jumpnow"]
 	path = meta-jumpnow
 	url = https://github.com/jumpnow/meta-jumpnow.git
-[submodule "meta-evoarm"]
-	path = meta-evoarm
-	url = git@github.com:jeremy-prater/meta-evoarm.git
 [submodule "meta-raspberrypi"]
 	path = meta-raspberrypi
 	url = git://git.yoctoproject.org/meta-raspberrypi
 	branch = dunfell
-[submodule "meta-darksky"]
-	path = meta-darksky
-	url = git@github.com:jeremy-prater/meta-darksky.git
 [submodule "meta-cloud-services"]
 	path = meta-cloud-services
 	url = git://git.yoctoproject.org/meta-cloud-services
 [submodule "meta-virtualization"]
 	path = meta-virtualization
 	url = git://git.yoctoproject.org/meta-virtualization
+[submodule "meta-electron"]
+	path = meta-electron
+	url = git@github.com:vulcanoio/meta-electron.git
+[submodule "meta-clang"]
+	path = meta-clang
+	url = https://github.com/kraj/meta-clang.git
+[submodule "meta-browser"]
+	path = meta-browser
+	url = https://github.com/OSSystems/meta-browser.git

@@ -20,9 +20,6 @@
 	path = meta-raspberrypi
 	url = git://git.yoctoproject.org/meta-raspberrypi
 	branch = dunfell
-[submodule "meta-cloud-services"]
-	path = meta-cloud-services
-	url = git://git.yoctoproject.org/meta-cloud-services
 [submodule "meta-clang"]
 	path = meta-clang
 	url = https://github.com/kraj/meta-clang.git

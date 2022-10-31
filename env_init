@@ -15,8 +15,8 @@ ROOTDIR="$(realpath $RELROOT)"
 echo " ==> Using root : $ROOTDIR <=="
 echo " ==> Using build dir : $BUILD_DIR <=="
 
-git submodule init
-git submodule update
+# git submodule init
+# git submodule update
 
 cd $ROOTDIR
 

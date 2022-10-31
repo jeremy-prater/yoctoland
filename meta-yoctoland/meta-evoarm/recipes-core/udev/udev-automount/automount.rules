@@ -1,0 +1,24 @@
+# There are a number of modifiers that are allowed to be used in some
+# of the different fields. They provide the following subsitutions:
+#
+# %n the "kernel number" of the device.
+#    For example, 'sda3' has a "kernel number" of '3'
+# %e the smallest number for that name which does not matches an existing node
+# %k the kernel name for the device
+# %M the kernel major number for the device
+# %m the kernel minor number for the device
+# %b the bus id for the device
+# %c the string returned by the PROGRAM
+# %s{filename} the content of a sysfs attribute
+# %% the '%' char itself
+#
+
+KERNEL!="sd[a-z][0-9]", GOTO="automount_end"
+
+PROGRAM="/usr/bin/usb-parse-devpath %p", ENV{dir_name}="/media/%c.%n"
+ACTION=="add", ENV{mount_options}="relatime,sync"
+ACTION=="add", ENV{ID_FS_TYPE}=="vfat|ntfs", ENV{mount_options}="$env{mount_options},utf8,gid=100,umask=002"
+ACTION=="add", RUN+="/bin/mkdir -p $env{dir_name}", RUN+="/bin/mount -o $env{mount_options} /dev/%k $env{dir_name}"
+ACTION=="remove", RUN+="/bin/umount -l $env{dir_name}", RUN+="/bin/rmdir $env{dir_name}"
+
+LABEL="automount_end"

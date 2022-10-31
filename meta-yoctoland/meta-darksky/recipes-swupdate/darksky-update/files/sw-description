@@ -1,0 +1,35 @@
+software =
+{
+    version = "1";
+    hardware-compatibility =
+    [
+        "1"
+    ];
+    darksky-raspberrypi4-64 =
+    {
+        images: (
+            {
+                filename = "darksky-raspberrypi4-64.ext4.gz";
+                device = "/dev/update";
+                type = "raw";
+                sha256 = "@darksky-raspberrypi4-64.ext4.gz";
+                compressed = true;
+            }
+        );
+
+        files: (
+            {
+                filename = "rpi4-boot.tar.gz";
+                path = "/tmp/rpi4-boot.tar.gz";
+                sha256 = "@rpi4-boot.tar.gz"
+            }
+        );
+    };
+    scripts: (
+        {
+            filename = "update.sh";
+            type = "shellscript";
+            sha256 = "@update.sh"
+        }
+    );
+};

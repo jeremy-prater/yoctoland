@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd docker
-docker build -t yoctoland .
+docker build --no-cache -t yoctoland .

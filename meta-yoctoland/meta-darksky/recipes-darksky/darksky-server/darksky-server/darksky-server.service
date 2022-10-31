@@ -1,0 +1,11 @@
+[Unit]
+Description=DarkSky Motor Controller Service
+
+[Service]
+Restart=on-failure
+Type=simple
+WorkingDirectory=/usr/bin/server
+ExecStart=/usr/bin/python3 server.py
+
+[Install]
+WantedBy=multi-user.target

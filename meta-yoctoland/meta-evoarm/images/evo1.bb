@@ -8,7 +8,9 @@ inherit image
 IMAGE_FSTYPES = "ext4.gz"
 
 CORE_OS = " \
-    openssh openssh-keygen openssh-sftp-server \
+    openssh \
+    openssh-keygen \
+    openssh-sftp-server \
     packagegroup-core-boot \
     term-prompt \
     tzdata \

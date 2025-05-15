@@ -1,0 +1,16 @@
+[Unit]
+Description=TS-7970 FPGA crossbar config
+DefaultDependencies=no
+After=sysinit.target
+Before=basic.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+# Route DIO1_IN to FGPA's TTYMXC2_CTS pad connected to GPIO3_30
+ExecStart=/usr/bin/tshwctl -m 5 -v 0x9B
+# Route DIO2_IN to FGPA's TTYMXC2_RTS pad connected to GPIO3_31
+ExecStart=/usr/bin/tshwctl -m 2 -v 0x9F
+
+[Install]
+WantedBy=multi-user.target

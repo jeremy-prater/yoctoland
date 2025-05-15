@@ -1,11 +1,11 @@
 ############################################################
 # Dockerfile to build yocto build environment image
-# Based on Ubuntu 18.04
+# Based on Ubuntu 24.04
 ############################################################
 
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
-MAINTAINER Jeremy Prater
+LABEL MAINTAINER="Jeremy Prater"
 
 # RUN dpkg --add-architecture i386
 RUN apt-get dist-upgrade
@@ -29,7 +29,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
 
 RUN apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib \
     build-essential chrpath socat cpio python3 python3-pip python3-pexpect \
-    xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev \
+    xz-utils debianutils iputils-ping python3-git python3-jinja2 libsdl1.2-dev \
     xterm zstd liblz4-tool
 
 # RUN apt-get install -y python3-venv python3-pip

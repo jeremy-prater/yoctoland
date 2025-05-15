@@ -5,14 +5,14 @@ import time
 curdir = os.getcwd()
 
 repoList = [
-    ("meta-clang", "kirkstone", "HEAD"),
-    ("meta-openembedded", "kirkstone", "HEAD"),
-    ("meta-qt5", "kirkstone", "HEAD"),
-    ("meta-raspberrypi", "kirkstone", "HEAD"),
-    ("meta-security", "kirkstone", "HEAD"),
-    ("meta-swupdate", "kirkstone", "HEAD"),
-    ("meta-wandboard", "kirkstone", "HEAD"),
-    ("poky", "kirkstone", "HEAD"),
+    ("meta-clang", "scarthgap", "HEAD"),
+    ("meta-openembedded", "scarthgap", "HEAD"),
+    ("meta-qt5", "scarthgap", "HEAD"),
+    ("meta-raspberrypi", "scarthgap", "HEAD"),
+    ("meta-security", "scarthgap", "HEAD"),
+    ("meta-swupdate", "scarthgap", "HEAD"),
+    ("meta-wandboard", "scarthgap", "HEAD"),
+    ("poky", "scarthgap", "HEAD"),
 ]
 
 

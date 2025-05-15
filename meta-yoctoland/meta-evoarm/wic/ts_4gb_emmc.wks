@@ -1,0 +1,15 @@
+# short-description: Create image for micro grid controller 8GB emmc systems
+# long-description:
+# Create an image that can be written onto 8GB emmc using bmaptools or uuu
+# Assume emmc user partition is only 7400 MiB
+#  --------_------------- ------------- -----------------
+# | unused |   rootfs1   |   rootfs2   |  gpt 2nd header |
+#  -------- ------------- ------------- -----------------
+# ^        ^             ^             ^                 ^
+# | 40MiB  |   1750MiB   |   1750MiB   |      10MiB      |
+# 0      40MiB       1790MiB       3540MiB            3550MiB
+
+part --source rootfs --fstype=ext4 --label rootfs1 --part-name rootfs1 --fixed-size 1750M --align 40960 --mkfs-extraopts="-O ^metadata_csum,^64bit"
+part --source rootfs --fstype=ext4 --label rootfs2 --part-name rootfs2 --fixed-size 1750M --mkfs-extraopts="-O ^metadata_csum,^64bit"
+
+bootloader --ptable gpt

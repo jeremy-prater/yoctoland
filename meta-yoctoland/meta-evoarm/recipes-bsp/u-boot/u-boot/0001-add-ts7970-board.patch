@@ -1,0 +1,37 @@
+Upstream-Status: Inappropriate [No upstream]
+
+diff --git a/arch/arm/dts/Makefile b/arch/arm/dts/Makefile
+index 9d28a485bec..bdc2683503b 100644
+--- a/arch/arm/dts/Makefile
++++ b/arch/arm/dts/Makefile
+@@ -983,6 +983,7 @@ dtb-y += \
+ 	imx6qp-sabreauto.dtb \
+ 	imx6qp-sabresd.dtb \
+ 	imx6qp-wandboard-revd1.dtb \
++	imx6q-ts7970.dtb \
+ 
+ endif
+ 
+diff --git a/arch/arm/mach-imx/mx6/Kconfig b/arch/arm/mach-imx/mx6/Kconfig
+index 7529b311f80..5bcee6c796e 100644
+--- a/arch/arm/mach-imx/mx6/Kconfig
++++ b/arch/arm/mach-imx/mx6/Kconfig
+@@ -222,6 +222,10 @@ config TARGET_GE_B1X5V2
+ 	select DM_THERMAL
+ 	select SUPPORT_SPL
+ 
++config TARGET_TS7970
++	bool "Support TS-7970"
++	select CPU_V7
++
+ config TARGET_GW_VENTANA
+ 	bool "gw_ventana"
+ 	depends on MX6QDL
+@@ -699,6 +703,7 @@ source "board/grinn/liteboard/Kconfig"
+ source "board/phytec/pcm058/Kconfig"
+ source "board/phytec/pcl063/Kconfig"
+ source "board/gateworks/gw_ventana/Kconfig"
++source "board/technologic/ts7970/Kconfig"
+ source "board/kontron/sl-mx6ul/Kconfig"
+ source "board/kosagi/novena/Kconfig"
+ source "board/softing/vining_2000/Kconfig"

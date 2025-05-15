@@ -1,0 +1,62 @@
+software =
+{
+    version = "@@VERSION@@";
+    ota_product = "@@OTA_PRODUCT@@";
+    ota_version = "@@OTA_VERSION@@";
+    ota_track = "@@OTA_TRACK@@";
+    ota_build_number = "@@OTA_BUILD_NUMBER@@";
+    hardware-compatibility: ["1.0"];
+    images: (
+        {
+            filename = "@@SWU_ROOTFS_FILENAME@@";
+            sha256 = "@@@SWU_ROOTFS_FILENAME@@";
+            device = "/dev/null";
+            type = "raw";
+            compressed = true;
+            installed-directly = true;
+            hook = "select_partition";
+        }
+    );
+    scripts: (
+	    {
+            filename = "update.lua";
+            type = "lua";
+            sha256 = "@update.lua";
+        }
+    );
+    embedded-script = "
+
+require (\"swupdate\")
+
+function select_partition(image)
+    local dest_found = false
+
+    local cmdline = io.open(\"/proc/cmdline\", \"rb\"):read(\"*all\")
+
+    local dev_prefix = \"rootfs\"
+    local partitions = {[1]=2, [2]=1}
+    for current_p, next_p in pairs(partitions) do
+        local current_dev = dev_prefix .. current_p
+        print(\"Searching for bootpart: \" .. current_dev)
+        if cmdline:find(current_dev) then
+            print(\"Found boot part: \" .. current_dev)
+            local newemmclabel = dev_prefix .. next_p
+            local dest_dev = \"/dev/disk/by-partlabel/\" .. newemmclabel
+            print(\"Using emmcbootlabel : \" .. newemmclabel)
+            print(\"Using device : \" .. dest_dev)
+            image['device'] = dest_dev
+            swupdate.set_bootenv(\"emmcbootlabel\", newemmclabel)
+            dest_found = true
+            f = io.open(\"/tmp/swupdate_update_dev\", \"w\")
+            f:write(dest_dev)
+            f:close()
+        end
+    end
+
+    if not dest_found then
+        swupdate.error(\"Unable to find correct install partition\")
+    end
+
+    return true, image
+end";
+}

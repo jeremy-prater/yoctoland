@@ -12,9 +12,8 @@ CORE_OS = " \
     openssh-keygen \
     openssh-sftp-server \
     packagegroup-core-boot \
-    term-prompt \
     tzdata \
-    u-boot-scr \
+    u-boot \
     swupdate \
     swupdate-www \
     swupdate-tools \
@@ -30,9 +29,6 @@ KERNEL_EXTRA_INSTALL = " \
 "
 
 WIFI_SUPPORT = " \
-    bcm4329-nvram-config \
-    bcm4330-nvram-config \
-    crda \
     iw \
     rfkill \
     wpa-supplicant \
@@ -44,7 +40,6 @@ BLUETOOTH_SUPPORT = " \
     bluez5 \
     bluez5-obex \
     bluez5-noinst-tools \
-    firmware-brcm43xx \
 "
 
 AUDIO_SUPPORT = " \
@@ -88,7 +83,6 @@ EXTRA_TOOLS_INSTALL = " \
     ethtool \
     fbset \
     findutils \
-    firewall \
     grep \
     i2c-tools \
     ifupdown \
@@ -102,9 +96,7 @@ EXTRA_TOOLS_INSTALL = " \
     ntp ntp-tickadj \
     parted \
     procps \
-    rndaddtoentcnt \
     rng-tools \
-    root-upgrader \
     sysfsutils \
     tcpdump \
     util-linux \
@@ -136,7 +128,7 @@ remove_blacklist_files() {
 }
 
 set_local_timezone() {
-    ln -sf /usr/share/zoneinfo/EST5EDT ${IMAGE_ROOTFS}/etc/localtime
+    ln -sf /usr/share/zoneinfo/PST8PDT ${IMAGE_ROOTFS}/etc/localtime
 }
 
 disable_bootlogd() {
@@ -146,6 +138,13 @@ disable_bootlogd() {
 create_opt_dir() {
     mkdir -p ${IMAGE_ROOTFS}/opt
 }
+
+# root password set to 'evoarm'
+INHERIT += "extrausers"
+# printf "%q" $(mkpasswd -m sha256crypt evoarm)
+ROOT_PASSWORD = "\$5\$En3aeBy3lMdFQKjP\$HH1Nm31aNuDm2yIW8824m.ths0LLOmmmnUlygiBpaU1"
+EXTRA_USERS_PARAMS = "usermod -p '${ROOT_PASSWORD}' root;"
+
 
 ROOTFS_POSTPROCESS_COMMAND += " \
     remove_blacklist_files ; \
